@@ -4,7 +4,7 @@ Yadelib is yet another date extensions library written in C#. Its core functiona
 
 # How to use
 
-Extension methods on the DateOnly, DateTime, and DateTimeOffset types make it easy to access yadelib's functionality. If needed, convert a DateTime(Offset) into a DateOnly using the `ToDateOnly()` extension. Afterwards, yadelib's feature set is available to you.
+Extension methods on the DateOnly, DateTime, and DateTimeOffset types make it easy to access yadelib's functionality. If needed, convert a DateTime(Offset) into a DateOnly using the `.ToDateOnly()` extension. Afterwards, yadelib's feature set is available to you.
 
 And optional input to all of the extension methods is an instance of the `NonWorkingDays` class. This assumes a set of non-working days by default, which yadelib then uses to determine the working day status of a date. Currently, Gregorian Easter-based holidays and some German public holidays are supported for the default.
 
@@ -19,7 +19,7 @@ using static System.Console;
 
 // Easter sunday 2022 was on April 17th
 var d = new DateOnly(2022, 4, 18);
-WriteLine(d.IsWorkingDay()) //false
+WriteLine(d.IsWorkingDay()); //false
 ```
 
 If not specified otherwise, weekends are on Saturdays and Sundays. This can be customised. Assume saturdays are workdays:
@@ -49,9 +49,9 @@ var nwd = new NonWorkingDays
 {
     Weekend = new DayOfWeek[] { DayOfWeek.Sunday }
 };
-WriteLine(d.GetXthWorkingDayOfTheMonth(5)); //2023-05-08
-WriteLine(d.GetXthWorkingDayOfTheMonth(5, startFromEnd: true)); //2023-05-24; note: 2023-05-29 is a holiday
-WriteLine(d.GetXthWorkingDayOfTheMonth(5, nonWorkingDays: nwd)); //2023-05-06
+WriteLine(d.GetXthWorkingDay(5)); //2023-05-08
+WriteLine(d.GetXthWorkingDay(5, startFromEnd: true)); //2023-05-24; note: 2023-05-29 is a holiday
+WriteLine(d.GetXthWorkingDay(5, nonWorkingDays: nwd)); //2023-05-06
 ```
 Get last day of the month:
 
