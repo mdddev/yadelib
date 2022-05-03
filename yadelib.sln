@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yadelib", "src\yadelib.csproj", "{C24CA646-80DE-4672-990F-1AFEF7C4091F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yadelib.tests", "tests\yadelib.tests.csproj", "{D1A08D28-F81D-420D-A213-DEA47C33A0A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C24CA646-80DE-4672-990F-1AFEF7C4091F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C24CA646-80DE-4672-990F-1AFEF7C4091F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C24CA646-80DE-4672-990F-1AFEF7C4091F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C24CA646-80DE-4672-990F-1AFEF7C4091F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1A08D28-F81D-420D-A213-DEA47C33A0A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1A08D28-F81D-420D-A213-DEA47C33A0A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1A08D28-F81D-420D-A213-DEA47C33A0A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1A08D28-F81D-420D-A213-DEA47C33A0A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0136D716-9DB2-44DD-9498-306A0B6F566A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0136D716-9DB2-44DD-9498-306A0B6F566A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0136D716-9DB2-44DD-9498-306A0B6F566A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0136D716-9DB2-44DD-9498-306A0B6F566A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7705675-8B27-401D-A1D1-07D1269223C1}
+	EndGlobalSection
+EndGlobal

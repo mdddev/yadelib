@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  push:
+    branches: [ main ]
+    paths: 
+      - src/**
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '6.x.x'
+
+      - name: Build that shit
+        run: dotnet build ./yadelib.sln --configuration Release --nologo
+
+      - name: Test that shit
+        run: dotnet test ./tests/yadelib.tests.csproj --no-restore --verbosity normal --nologo
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+
+      - name: Release that shit
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUGET_TOKEN: ${{ secrets.NUGET_PAT }}
+        run: |
+          npm ci
+          npx semantic-release -b main

@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/github",
+    [
+      "@semantic-release/exec", {
+        "prepareCmd": "dotnet pack ./src/yadelib.csproj --no-restore --nologo --configuration Release /p:Version=${nextRelease.version}",
+        "publishCmd": "pwsh -c './publish.ps1 -version ${nextRelease.version} -github ${process.env.GH_TOKEN} -nuget ${process.env.NUGET_TOKEN}'"
+      }
+    ]
+  ]
+}

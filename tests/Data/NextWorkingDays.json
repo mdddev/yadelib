@@ -1,0 +1,42 @@
+[
+  {
+    "current": "2022-04-22",
+    "expected": "2022-04-25",
+    "nwd": {
+      "germanPublicHolidays": 0,
+      "weekend": [ 6, 0 ],
+      "customNonWorkingsDays": [],
+      "europeanTARGET": false
+    }
+  },
+  {
+    "current": "2022-04-22",
+    "expected": "2022-04-23",
+    "nwd": {
+      "germanPublicHolidays": 0,
+      "weekend": [],
+      "customNonWorkingsDays": [],
+      "europeanTARGET": false
+    }
+  },
+  {
+    "current": "2022-04-14",
+    "expected": "2022-04-19",
+    "nwd": {
+      "germanPublicHolidays": 0,
+      "weekend": [ 6, 0 ],
+      "customNonWorkingsDays": [],
+      "europeanTARGET": false
+    }
+  },
+  {
+    "current": "2022-04-14",
+    "expected": "2022-04-20",
+    "nwd": {
+      "germanPublicHolidays": 0,
+      "weekend": [ 6, 0 ],
+      "customNonWorkingsDays": [ "2022-04-19" ],
+      "europeanTARGET": false
+    }
+  }
+]
