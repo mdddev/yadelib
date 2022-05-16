@@ -106,6 +106,11 @@ public static class DateOnlyExtensions
         return new DateOnly(thisDate.Year, thisDate.Month, DAY);
     }
 
+    public static DateOnly GetFirstWorkingDay(this DateOnly thisDate, NonWorkingDays? nonWorkingDays = null)
+    {
+        return thisDate.GetFirstXWorkingDays(1, nonWorkingDays).Single();
+    }
+
     public static List<DateOnly> GetFirstXWorkingDays(this DateOnly thisDate, int x = 1, NonWorkingDays? nonWorkingDays = null)
     {
         if (x < 1) throw new ArgumentOutOfRangeException(nameof(x), x, $"{nameof(x)} should be gte 1");
@@ -135,6 +140,11 @@ public static class DateOnlyExtensions
     public static DateOnly GetLastWorkingDay(this DateOnly thisDate, NonWorkingDays? nonWorkingDays = null)
     {
         return thisDate.GetLastXWorkingDays(1, nonWorkingDays).Single();
+    }
+
+    public static DateOnly GetLastDay(this DateOnly thisDate)
+    {
+        return new DateOnly(thisDate.Year, thisDate.Month, 1).AddMonths(1).AddDays(-1);
     }
 
     #region INTERNAL
