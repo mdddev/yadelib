@@ -106,6 +106,11 @@ public static class DateOnlyExtensions
         return new DateOnly(thisDate.Year, thisDate.Month, DAY);
     }
 
+    public static DateOnly GetFirstDay(this DateOnly thisDate)
+    {
+        return new DateOnly(thisDate.Year, thisDate.Month, 1);
+    }
+
     public static DateOnly GetFirstWorkingDay(this DateOnly thisDate, NonWorkingDays? nonWorkingDays = null)
     {
         return thisDate.GetFirstXWorkingDays(1, nonWorkingDays).Single();
@@ -122,6 +127,11 @@ public static class DateOnlyExtensions
         }
 
         return days;
+    }
+
+    public static DateOnly GetLastDay(this DateOnly thisDate)
+    {
+        return thisDate.GetFirstDay().AddMonths(1).AddDays(-1);
     }
 
     public static List<DateOnly> GetLastXWorkingDays(this DateOnly thisDate, int x = 1, NonWorkingDays? nonWorkingDays = null)
@@ -142,10 +152,6 @@ public static class DateOnlyExtensions
         return thisDate.GetLastXWorkingDays(1, nonWorkingDays).Single();
     }
 
-    public static DateOnly GetLastDay(this DateOnly thisDate)
-    {
-        return new DateOnly(thisDate.Year, thisDate.Month, 1).AddMonths(1).AddDays(-1);
-    }
 
     #region INTERNAL
 
