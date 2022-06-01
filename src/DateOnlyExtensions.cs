@@ -27,7 +27,7 @@ public static class DateOnlyExtensions
             var i = 0;
             do
             {
-                thisDate = thisDate.AddDays(1).GetNextWorkingDay(nonWorkingDays);
+                thisDate = thisDate.GetNextWorkingDay(nonWorkingDays);
                 i++;
             } while (i < x);
 
@@ -38,7 +38,7 @@ public static class DateOnlyExtensions
             var i = 0;
             do
             {
-                thisDate = thisDate.AddDays(-1).GetPreviousWorkingDay(nonWorkingDays);
+                thisDate = thisDate.GetPreviousWorkingDay(nonWorkingDays);
                 i++;
             } while (i < Math.Abs(x));
 
