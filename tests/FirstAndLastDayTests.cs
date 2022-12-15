@@ -50,9 +50,7 @@ public class FirstAndLastDayTests
     [InlineData(2030, 2, "{\"EOM\":\"2030-02-28\"}")]
     public void Should_correctly_calculate_the_last_day_of_the_month(int year, int month, string lastDay)
     {
-        var opt = new JsonSerializerOptions {};
-        opt.Converters.Add(new DateOnlyJsonConverter());
-        var expected = JsonSerializer.Deserialize<EndOfMonth>(lastDay, opt);
+        var expected = JsonSerializer.Deserialize<EndOfMonth>(lastDay);
         ArgumentNullException.ThrowIfNull(expected, nameof(expected));
         var actual = new DateOnly(year, month, 15).GetLastDay();
         Assert.Equal(expected.EOM, actual);

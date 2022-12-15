@@ -22,7 +22,6 @@ public class WorkingDayTests
         string path = Path.Combine(Directory.GetCurrentDirectory(), "Data/NextWorkingDays.json");
         var json = File.ReadAllText(path);
         var opt = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-        opt.Converters.Add(new DateOnlyJsonConverter());
         var tests = JsonSerializer.Deserialize<List<NextWorkingDayTest>>(json, opt);
 
         ArgumentNullException.ThrowIfNull(tests, nameof(tests));

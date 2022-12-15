@@ -49,7 +49,6 @@ public class EasterDateTests
         string path = Path.Combine(Directory.GetCurrentDirectory(), "Data/EasterDates_1700-2299.json");
         var json = File.ReadAllText(path);
         var opt = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-        opt.Converters.Add(new DateOnlyJsonConverter());
         var dates = JsonSerializer.Deserialize<List<EasterDate>>(json, opt);
 
         ArgumentNullException.ThrowIfNull(dates, nameof(dates));

@@ -5,8 +5,8 @@
     <Title>Yet another date extensions library</Title>
     <RepositoryUrl>https://github.com/mdddev/yadelib</RepositoryUrl>
     <OutputType>Library</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
-    <LangVersion>10.0</LangVersion>
+    <TargetFramework>net7.0</TargetFramework>
+    <LangVersion>11.0</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageReadmeFile>README.md</PackageReadmeFile>
