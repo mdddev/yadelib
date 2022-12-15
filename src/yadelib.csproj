@@ -10,6 +10,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>Easy-to-use extension methods for NET's DateOnly type. Focusses on workday-related things</Description>
   </PropertyGroup>
 
   <ItemGroup>
