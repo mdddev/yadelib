@@ -6,10 +6,7 @@ Yadelib is yet another date extensions library written in C#. Its core functiona
 
 Extension methods on the DateOnly, DateTime, and DateTimeOffset types make it easy to access yadelib's functionality. If needed, convert a DateTime(Offset) into a DateOnly using the `.ToDateOnly()` extension. Afterwards, yadelib's feature set is available to you.
 
-And optional input to all of the extension methods is an instance of the `NonWorkingDays` class. This assumes a set of non-working days by default, which yadelib then uses to determine the working day status of a date. Currently, Gregorian Easter-based holidays and some German public holidays are supported for the default.
-
-### Not specific to yadelib, but to DateOnly in general
-As of now `System.Text.Json` does not support de-/serialization to/from DateOnly. To work around this restriction a [custom converter](./src/Helper/DateOnlyAndTimeOnlyJsonConverter.cs) can be used as recommended [here](https://github.com/dotnet/runtime/issues/51302#issuecomment-834720918).
+An optional input to all of the extension methods is an instance of the `NonWorkingDays` class. This assumes a set of non-working days by default, which yadelib then uses to determine the working day status of a date. Currently, Gregorian Easter-based holidays and some German public holidays are supported for the default.
 
 # Examples
 As default, Easter-based holidays are not workdays:
