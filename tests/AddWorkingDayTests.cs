@@ -23,7 +23,6 @@ public class AddWorkingDayTests
         string path = Path.Combine(Directory.GetCurrentDirectory(), "Data/AddWorkingDays.json");
         var json = File.ReadAllText(path);
         var opt = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-        opt.Converters.Add(new DateOnlyJsonConverter());
         var testsData = JsonSerializer.Deserialize<List<AddWorkingDaysTestData>>(json, opt);
 
         ArgumentNullException.ThrowIfNull(testsData, nameof(testsData));
